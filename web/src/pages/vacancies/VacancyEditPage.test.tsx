@@ -28,7 +28,7 @@ describe("VacancyEditPage", () => {
 
     renderPage();
 
-    expect(await screen.findByText(/vacancy not found/i)).toBeInTheDocument();
+    expect(await screen.findByText("Vacancy not found")).toBeInTheDocument();
     expect(screen.queryByLabelText(/role title/i)).not.toBeInTheDocument();
   });
 

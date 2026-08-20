@@ -24,7 +24,7 @@ services:
       DB_NAME: rakamin_development
       REDIS_URL: redis://redis:6379/1
       ALLOWED_ORIGINS: http://localhost:5173
-      APP_BASE_URL: http://localhost:3001
+      APP_BASE_URL: http://localhost:5173
       # Dev-only signing secret. Never reuse this value outside local dev.
       SECRET_KEY_BASE: ${SECRET_KEY_BASE:-devcontainer-insecure-dev-secret-do-not-use-in-prod}
       TOKEN_EXPIRATION_TIME: "259200"

@@ -24,8 +24,6 @@ module Sessions
     def publish_status_update
       payload = { type: 'session_status', status: @session.status, end_reason: nil }.to_json
       Sidekiq.redis { |conn| conn.publish("coverage:#{@session.id}", payload) }
-      # redis = ::Redis.new(url: ENV.fetch('REDIS_URL', 'redis://localhost:6379/1'))
-      # redis.publish("coverage:#{@session.id}", { type: 'session_status', status: @session.status, end_reason: nil }.to_json)
     rescue => e
       Rails.logger.error("[StartHandler] Failed to publish status update: #{e.message}")
     end
